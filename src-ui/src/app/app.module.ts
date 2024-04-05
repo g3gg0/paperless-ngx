@@ -120,6 +120,7 @@ import { RotateConfirmDialogComponent } from './components/common/confirm-dialog
 import { MergeConfirmDialogComponent } from './components/common/confirm-dialog/merge-confirm-dialog/merge-confirm-dialog.component'
 import { SplitConfirmDialogComponent } from './components/common/confirm-dialog/split-confirm-dialog/split-confirm-dialog.component'
 import { GlobalSearchComponent } from './components/app-frame/global-search/global-search.component'
+import { HotkeyDialogComponent } from './components/common/hotkey-dialog/hotkey-dialog.component'
 import {
   airplane,
   archive,
@@ -480,6 +481,7 @@ function initializeApp(settings: SettingsService) {
     MergeConfirmDialogComponent,
     SplitConfirmDialogComponent,
     GlobalSearchComponent,
+    HotkeyDialogComponent,
   ],
   imports: [
     BrowserModule,
