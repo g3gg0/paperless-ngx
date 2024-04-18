@@ -120,6 +120,7 @@ import { RotateConfirmDialogComponent } from './components/common/confirm-dialog
 import { MergeConfirmDialogComponent } from './components/common/confirm-dialog/merge-confirm-dialog/merge-confirm-dialog.component'
 import { SplitConfirmDialogComponent } from './components/common/confirm-dialog/split-confirm-dialog/split-confirm-dialog.component'
 import { DragDropSelectComponent } from './components/common/input/drag-drop-select/drag-drop-select.component'
+import { CustomFieldDisplayComponent } from './components/common/custom-field-display/custom-field-display.component'
 import {
   airplane,
   archive,
@@ -476,6 +477,7 @@ function initializeApp(settings: SettingsService) {
     MergeConfirmDialogComponent,
     SplitConfirmDialogComponent,
     DragDropSelectComponent,
+    CustomFieldDisplayComponent,
   ],
   imports: [
     BrowserModule,
