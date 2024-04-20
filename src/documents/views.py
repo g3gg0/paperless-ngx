@@ -244,7 +244,8 @@ class CorrespondentViewSet(ModelViewSet, PermissionsAwareDocumentCountMixin):
     model = Correspondent
 
     queryset = (
-        Correspondent.objects.annotate(
+        Correspondent.objects.prefetch_related("documents")
+        .annotate(
             last_correspondence=Max("documents__created"),
         )
         .select_related("owner")
@@ -392,7 +393,7 @@ class DocumentViewSet(
         )
 
     def file_response(self, pk, request, disposition):
-        doc = Document.objects.get(id=pk)
+        doc = Document.objects.select_related("owner").get(id=pk)
         if request.user is not None and not has_perms_owner_aware(
             request.user,
             "view_document",
@@ -436,7 +437,7 @@ class DocumentViewSet(
     )
     def metadata(self, request, pk=None):
         try:
-            doc = Document.objects.get(pk=pk)
+            doc = Document.objects.select_related("owner").get(pk=pk)
             if request.user is not None and not has_perms_owner_aware(
                 request.user,
                 "view_document",
@@ -555,7 +556,7 @@ class DocumentViewSet(
     @method_decorator(last_modified(thumbnail_last_modified))
     def thumb(self, request, pk=None):
         try:
-            doc = Document.objects.get(id=pk)
+            doc = Document.objects.select_related("owner").get(id=pk)
             if request.user is not None and not has_perms_owner_aware(
                 request.user,
                 "view_document",
@@ -591,14 +592,16 @@ class DocumentViewSet(
                     "last_name": c.user.last_name,
                 },
             }
-            for c in Note.objects.filter(document=doc).order_by("-created")
+            for c in Note.objects.select_related("user")
+            .filter(document=doc)
+            .order_by("-created")
         ]
 
     @action(methods=["get", "post", "delete"], detail=True)
     def notes(self, request, pk=None):
         currentUser = request.user
         try:
-            doc = Document.objects.get(pk=pk)
+            doc = Document.objects.select_related("owner").get(pk=pk)
             if currentUser is not None and not has_perms_owner_aware(
                 currentUser,
                 "view_document",
@@ -702,7 +705,7 @@ class DocumentViewSet(
     def share_links(self, request, pk=None):
         currentUser = request.user
         try:
-            doc = Document.objects.get(pk=pk)
+            doc = Document.objects.select_related("owner").get(pk=pk)
             if currentUser is not None and not has_perms_owner_aware(
                 currentUser,
                 "change_document",
@@ -887,7 +890,9 @@ class BulkEditView(PassUserMixin):
         documents = serializer.validated_data.get("documents")
 
         if not user.is_superuser:
-            document_objs = Document.objects.filter(pk__in=documents)
+            document_objs = Document.objects.select_related("owner").filter(
+                pk__in=documents,
+            )
             has_perms = (
                 all((doc.owner == user or doc.owner is None) for doc in document_objs)
                 if method
@@ -1182,9 +1187,8 @@ class BulkDownloadView(GenericAPIView):
 
         with zipfile.ZipFile(temp.name, "w", compression) as zipf:
             strategy = strategy_class(zipf, follow_filename_format)
-            for id in ids:
-                doc = Document.objects.get(id=id)
-                strategy.add_document(doc)
+            for document in Document.objects.filter(pk__in=ids):
+                strategy.add_document(document)
 
         with open(temp.name, "rb") as f:
             response = HttpResponse(f, content_type="application/zip")
@@ -1245,7 +1249,7 @@ class UiSettingsView(GenericAPIView):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
 
-        user = User.objects.get(pk=request.user.id)
+        user = User.objects.select_related("ui_settings").get(pk=request.user.id)
         ui_settings = {}
         if hasattr(user, "ui_settings"):
             ui_settings = user.ui_settings.settings
@@ -1465,7 +1469,7 @@ class BulkEditObjectsView(PassUserMixin):
         object_class = serializer.get_object_class(object_type)
         operation = serializer.validated_data.get("operation")
 
-        objs = object_class.objects.filter(pk__in=object_ids)
+        objs = object_class.objects.select_related("owner").filter(pk__in=object_ids)
 
         if not user.is_superuser:
             model_name = object_class._meta.verbose_name
