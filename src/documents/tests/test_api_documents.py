@@ -1622,7 +1622,7 @@ class TestDocumentApi(DirectoriesMixin, DocumentConsumeDelayMixin, APITestCase):
                 "display_fields": [
                     SavedView.DisplayFields.TITLE,
                     SavedView.DisplayFields.CREATED,
-                    SavedView.DynamicDisplayFields.CUSTOM_FIELD[0] % custom_field.id,
+                    SavedView.DisplayFields.CUSTOM_FIELD % custom_field.id,
                 ],
             },
             format="json",
@@ -1635,7 +1635,7 @@ class TestDocumentApi(DirectoriesMixin, DocumentConsumeDelayMixin, APITestCase):
             [
                 str(SavedView.DisplayFields.TITLE),
                 str(SavedView.DisplayFields.CREATED),
-                SavedView.DynamicDisplayFields.CUSTOM_FIELD[0] % custom_field.id,
+                SavedView.DisplayFields.CUSTOM_FIELD % custom_field.id,
             ],
         )
 
@@ -1646,7 +1646,7 @@ class TestDocumentApi(DirectoriesMixin, DocumentConsumeDelayMixin, APITestCase):
                 "display_fields": [
                     SavedView.DisplayFields.TITLE,
                     SavedView.DisplayFields.CREATED,
-                    SavedView.DynamicDisplayFields.CUSTOM_FIELD[0] % 99,
+                    SavedView.DisplayFields.CUSTOM_FIELD % 99,
                 ],
             },
             format="json",
