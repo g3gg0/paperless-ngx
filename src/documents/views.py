@@ -228,7 +228,7 @@ class PermissionsAwareDocumentCountMixin(PassUserMixin):
                     documents__id__in=get_objects_for_user_owner_aware(
                         self.request.user,
                         "documents.view_document",
-                        Document,
+                        Document.objects.only("pk"),
                     ).values_list("id", flat=True),
                 )
             )
@@ -497,7 +497,7 @@ class DocumentViewSet(
         ),
     )
     def suggestions(self, request, pk=None):
-        doc = get_object_or_404(Document, pk=pk)
+        doc = get_object_or_404(Document.objects.select_related("owner"), pk=pk)
         if request.user is not None and not has_perms_owner_aware(
             request.user,
             "view_document",
@@ -582,7 +582,7 @@ class DocumentViewSet(
     def getNotes(self, doc):
         return [
             {
-                "id": c.id,
+                "id": c.pk,
                 "note": c.note,
                 "created": c.created,
                 "user": {
@@ -593,15 +593,30 @@ class DocumentViewSet(
                 },
             }
             for c in Note.objects.select_related("user")
+            .only(
+                "pk",
+                "note",
+                "created",
+                "user__id",
+                "user__username",
+                "user__first_name",
+                "user__last_name",
+            )
             .filter(document=doc)
             .order_by("-created")
         ]
 
     @action(methods=["get", "post", "delete"], detail=True)
     def notes(self, request, pk=None):
+
         currentUser = request.user
         try:
-            doc = Document.objects.select_related("owner").get(pk=pk)
+            doc = (
+                Document.objects.select_related("owner")
+                .prefetch_related("notes")
+                .only("pk", "owner__id")
+                .get(pk=pk)
+            )
             if currentUser is not None and not has_perms_owner_aware(
                 currentUser,
                 "view_document",
@@ -613,7 +628,8 @@ class DocumentViewSet(
 
         if request.method == "GET":
             try:
-                return Response(self.getNotes(doc))
+                notes = self.getNotes(doc)
+                return Response(notes)
             except Exception as e:
                 logger.warning(f"An error occurred retrieving notes: {e!s}")
                 return Response(
@@ -635,7 +651,6 @@ class DocumentViewSet(
                     note=request.data["note"],
                     user=currentUser,
                 )
-                c.save()
                 # If audit log is enabled make an entry in the log
                 # about this note change
                 if settings.AUDIT_LOG_ENABLED:
@@ -654,9 +669,11 @@ class DocumentViewSet(
 
                 from documents import index
 
-                index.add_or_update_document(self.get_object())
+                index.add_or_update_document(doc)
 
-                return Response(self.getNotes(doc))
+                notes = self.getNotes(doc)
+
+                return Response(notes)
             except Exception as e:
                 logger.warning(f"An error occurred saving note: {e!s}")
                 return Response(
@@ -721,12 +738,13 @@ class DocumentViewSet(
             now = timezone.now()
             links = [
                 {
-                    "id": c.id,
+                    "id": c.pk,
                     "created": c.created,
                     "expiration": c.expiration,
                     "slug": c.slug,
                 }
                 for c in ShareLink.objects.filter(document=doc)
+                .only("pk", "created", "expiration", "slug")
                 .exclude(expiration__lt=now)
                 .order_by("-created")
             ]
@@ -1066,16 +1084,21 @@ class StatisticsView(APIView):
     permission_classes = (IsAuthenticated,)
 
     def get(self, request, format=None):
+
         user = request.user if request.user is not None else None
 
         documents = (
-            Document.objects.all()
-            if user is None
-            else get_objects_for_user_owner_aware(
-                user,
-                "documents.view_document",
-                Document,
+            (
+                Document.objects.all()
+                if user is None
+                else get_objects_for_user_owner_aware(
+                    user,
+                    "documents.view_document",
+                    Document,
+                )
             )
+            .only("mime_type", "content")
+            .prefetch_related("tags")
         )
         tags = (
             Tag.objects.all()
@@ -1083,26 +1106,26 @@ class StatisticsView(APIView):
             else get_objects_for_user_owner_aware(user, "documents.view_tag", Tag)
         )
         correspondent_count = (
-            Correspondent.objects.count()
-            if user is None
-            else len(
-                get_objects_for_user_owner_aware(
+            (
+                Correspondent.objects.count()
+                if user is None
+                else get_objects_for_user_owner_aware(
                     user,
                     "documents.view_correspondent",
                     Correspondent,
-                ),
-            )
+                ).count()
+            ),
         )
         document_type_count = (
-            DocumentType.objects.count()
-            if user is None
-            else len(
-                get_objects_for_user_owner_aware(
+            (
+                DocumentType.objects.count()
+                if user is None
+                else get_objects_for_user_owner_aware(
                     user,
                     "documents.view_documenttype",
                     DocumentType,
-                ),
-            )
+                ).count()
+            ),
         )
         storage_path_count = (
             StoragePath.objects.count()

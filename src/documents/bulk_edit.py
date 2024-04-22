@@ -24,11 +24,16 @@ logger = logging.getLogger("paperless.bulk_edit")
 
 
 def set_correspondent(doc_ids, correspondent):
-    if correspondent:
-        correspondent = Correspondent.objects.get(id=correspondent)
 
-    qs = Document.objects.filter(Q(id__in=doc_ids) & ~Q(correspondent=correspondent))
-    affected_docs = [doc.id for doc in qs]
+    if correspondent:
+        correspondent = Correspondent.objects.only("pk").get(id=correspondent)
+
+    qs = (
+        Document.objects.filter(Q(id__in=doc_ids) & ~Q(correspondent=correspondent))
+        .select_related("correspondent")
+        .only("pk", "correspondent__id")
+    )
+    affected_docs = list(qs.values_list("pk", flat=True))
     qs.update(correspondent=correspondent)
 
     bulk_update_documents.delay(document_ids=affected_docs)
@@ -38,12 +43,16 @@ def set_correspondent(doc_ids, correspondent):
 
 def set_storage_path(doc_ids, storage_path):
     if storage_path:
-        storage_path = StoragePath.objects.get(id=storage_path)
+        storage_path = StoragePath.objects.only("pk").get(id=storage_path)
 
-    qs = Document.objects.filter(
-        Q(id__in=doc_ids) & ~Q(storage_path=storage_path),
+    qs = (
+        Document.objects.filter(
+            Q(id__in=doc_ids) & ~Q(storage_path=storage_path),
+        )
+        .select_related("storage_path")
+        .only("pk", "storage_path__id")
     )
-    affected_docs = [doc.id for doc in qs]
+    affected_docs = list(qs.values_list("pk", flat=True))
     qs.update(storage_path=storage_path)
 
     bulk_update_documents.delay(
@@ -55,10 +64,14 @@ def set_storage_path(doc_ids, storage_path):
 
 def set_document_type(doc_ids, document_type):
     if document_type:
-        document_type = DocumentType.objects.get(id=document_type)
+        document_type = DocumentType.objects.only("pk").get(id=document_type)
 
-    qs = Document.objects.filter(Q(id__in=doc_ids) & ~Q(document_type=document_type))
-    affected_docs = [doc.id for doc in qs]
+    qs = (
+        Document.objects.filter(Q(id__in=doc_ids) & ~Q(document_type=document_type))
+        .select_related("document_type")
+        .only("pk", "document_type__id")
+    )
+    affected_docs = list(qs.values_list("pk", flat=True))
     qs.update(document_type=document_type)
 
     bulk_update_documents.delay(document_ids=affected_docs)
@@ -67,8 +80,9 @@ def set_document_type(doc_ids, document_type):
 
 
 def add_tag(doc_ids, tag):
-    qs = Document.objects.filter(Q(id__in=doc_ids) & ~Q(tags__id=tag))
-    affected_docs = [doc.id for doc in qs]
+
+    qs = Document.objects.filter(Q(id__in=doc_ids) & ~Q(tags__id=tag)).only("pk")
+    affected_docs = list(qs.values_list("pk", flat=True))
 
     DocumentTagRelationship = Document.tags.through
 
@@ -82,8 +96,9 @@ def add_tag(doc_ids, tag):
 
 
 def remove_tag(doc_ids, tag):
-    qs = Document.objects.filter(Q(id__in=doc_ids) & Q(tags__id=tag))
-    affected_docs = [doc.id for doc in qs]
+
+    qs = Document.objects.filter(Q(id__in=doc_ids) & Q(tags__id=tag)).only("pk")
+    affected_docs = list(qs.values_list("pk", flat=True))
 
     DocumentTagRelationship = Document.tags.through
 
@@ -97,8 +112,8 @@ def remove_tag(doc_ids, tag):
 
 
 def modify_tags(doc_ids, add_tags, remove_tags):
-    qs = Document.objects.filter(id__in=doc_ids)
-    affected_docs = [doc.id for doc in qs]
+    qs = Document.objects.filter(id__in=doc_ids).only("pk")
+    affected_docs = list(qs.values_list("pk", flat=True))
 
     DocumentTagRelationship = Document.tags.through
 
@@ -142,7 +157,7 @@ def redo_ocr(doc_ids):
 
 
 def set_permissions(doc_ids, set_permissions, owner=None, merge=False):
-    qs = Document.objects.filter(id__in=doc_ids)
+    qs = Document.objects.filter(id__in=doc_ids).select_related("owner")
 
     if merge:
         # If merging, only set owner for documents that don't have an owner
@@ -153,7 +168,7 @@ def set_permissions(doc_ids, set_permissions, owner=None, merge=False):
     for doc in qs:
         set_permissions_for_object(permissions=set_permissions, object=doc, merge=merge)
 
-    affected_docs = [doc.id for doc in qs]
+    affected_docs = list(qs.values_list("pk", flat=True))
 
     bulk_update_documents.delay(document_ids=affected_docs)
 
