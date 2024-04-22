@@ -212,6 +212,19 @@ def _parse_beat_schedule() -> dict:
                 * 60.0,
             },
         },
+        {
+            "name": "Empty trash",
+            "env_key": "PAPERLESS_EMPTY_TRASH_TASK_CRON",
+            # Default daily at 01:00
+            "env_default": "0 1 * * *",
+            "task": "documents.tasks.sanity_check",
+            "options": {
+                # 1 hour before default schedule sends again
+                "expires": 23.0
+                * 60.0
+                * 60.0,
+            },
+        },
     ]
     for task in tasks:
         # Either get the environment setting or use the default
@@ -1147,3 +1160,9 @@ EMAIL_SUBJECT_PREFIX: Final[str] = "[Paperless-ngx] "
 if DEBUG:  # pragma: no cover
     EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
     EMAIL_FILE_PATH = BASE_DIR / "sent_emails"
+
+
+###############################################################################
+# Soft Delete
+###############################################################################
+EMPTY_TRASH_DELAY = max(__get_int("PAPERLESS_SOFT_DELETE_DELAY", 30), 1)
