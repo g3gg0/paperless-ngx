@@ -48,6 +48,8 @@ export interface Document extends ObjectWithPermissions {
 
   added?: Date
 
+  deleted_at?: Date
+
   original_file_name?: string
 
   archived_file_name?: string
