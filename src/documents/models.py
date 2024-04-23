@@ -29,7 +29,7 @@ from documents.data_models import DocumentSource
 from documents.parsers import get_default_file_extension
 
 
-class ModelWithOwner(SoftDeleteModel):
+class ModelWithOwner(models.Model):
     owner = models.ForeignKey(
         User,
         blank=True,
@@ -132,7 +132,7 @@ class StoragePath(MatchingModel):
         verbose_name_plural = _("storage paths")
 
 
-class Document(ModelWithOwner):
+class Document(SoftDeleteModel, ModelWithOwner):
     STORAGE_TYPE_UNENCRYPTED = "unencrypted"
     STORAGE_TYPE_GPG = "gpg"
     STORAGE_TYPES = (
@@ -422,7 +422,7 @@ class SavedView(ModelWithOwner):
         return f"SavedView {self.name}"
 
 
-class SavedViewFilterRule(SoftDeleteModel):
+class SavedViewFilterRule(models.Model):
     RULE_TYPES = [
         (0, _("title contains")),
         (1, _("content contains")),
@@ -650,7 +650,7 @@ class PaperlessTask(models.Model):
         return f"Task {self.task_id}"
 
 
-class Note(SoftDeleteModel):
+class Note(models.Model):
     note = models.TextField(
         _("content"),
         blank=True,
@@ -690,7 +690,7 @@ class Note(SoftDeleteModel):
         return self.note
 
 
-class ShareLink(SoftDeleteModel):
+class ShareLink(models.Model):
     class FileVersion(models.TextChoices):
         ARCHIVE = ("archive", _("Archive"))
         ORIGINAL = ("original", _("Original"))
@@ -750,7 +750,7 @@ class ShareLink(SoftDeleteModel):
         return f"Share Link for {self.document.title}"
 
 
-class CustomField(SoftDeleteModel):
+class CustomField(models.Model):
     """
     Defines the name and type of a custom field
     """
@@ -796,7 +796,7 @@ class CustomField(SoftDeleteModel):
         return f"{self.name} : {self.data_type}"
 
 
-class CustomFieldInstance(SoftDeleteModel):
+class CustomFieldInstance(models.Model):
     """
     A single instance of a field, attached to a CustomField for the name and type
     and attached to a single Document to be metadata for it
@@ -893,7 +893,7 @@ if settings.AUDIT_LOG_ENABLED:
     auditlog.register(CustomFieldInstance)
 
 
-class WorkflowTrigger(SoftDeleteModel):
+class WorkflowTrigger(models.Model):
     class WorkflowTriggerMatching(models.IntegerChoices):
         # No auto matching
         NONE = MatchingModel.MATCH_NONE, _("None")
@@ -997,7 +997,7 @@ class WorkflowTrigger(SoftDeleteModel):
         return f"WorkflowTrigger {self.pk}"
 
 
-class WorkflowAction(SoftDeleteModel):
+class WorkflowAction(models.Model):
     class WorkflowActionType(models.IntegerChoices):
         ASSIGNMENT = (
             1,
@@ -1216,7 +1216,7 @@ class WorkflowAction(SoftDeleteModel):
         return f"WorkflowAction {self.pk}"
 
 
-class Workflow(SoftDeleteModel):
+class Workflow(models.Model):
     name = models.CharField(_("name"), max_length=256, unique=True)
 
     order = models.IntegerField(_("order"), default=0)
