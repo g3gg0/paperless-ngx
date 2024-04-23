@@ -55,6 +55,7 @@ export const SETTINGS_KEYS = {
   DEFAULT_PERMS_EDIT_GROUPS: 'general-settings:permissions:default-edit-groups',
   DOCUMENT_EDITING_REMOVE_INBOX_TAGS:
     'general-settings:document-editing:remove-inbox-tags',
+  EMPTY_TRASH_DELAY: 'general-settings:trash:empty-trash-delay',
 }
 
 export const SETTINGS: UiSetting[] = [
@@ -212,5 +213,10 @@ export const SETTINGS: UiSetting[] = [
     key: SETTINGS_KEYS.DOCUMENT_EDITING_REMOVE_INBOX_TAGS,
     type: 'boolean',
     default: false,
+  },
+  {
+    key: SETTINGS_KEYS.EMPTY_TRASH_DELAY,
+    type: 'number',
+    default: 30,
   },
 ]

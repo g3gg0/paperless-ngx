@@ -1165,4 +1165,4 @@ if DEBUG:  # pragma: no cover
 ###############################################################################
 # Soft Delete
 ###############################################################################
-EMPTY_TRASH_DELAY = max(__get_int("PAPERLESS_SOFT_DELETE_DELAY", 30), 1)
+EMPTY_TRASH_DELAY = max(__get_int("PAPERLESS_EMPTY_TRASH_DELAY", 30), 1)
