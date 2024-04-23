@@ -23,7 +23,7 @@ from documents.tasks import update_document_archive_file
 logger = logging.getLogger("paperless.bulk_edit")
 
 
-def set_correspondent(doc_ids, correspondent):
+def set_correspondent(doc_ids: list[int], correspondent):
 
     if correspondent:
         correspondent = Correspondent.objects.only("pk").get(id=correspondent)
@@ -41,7 +41,7 @@ def set_correspondent(doc_ids, correspondent):
     return "OK"
 
 
-def set_storage_path(doc_ids, storage_path):
+def set_storage_path(doc_ids: list[int], storage_path):
     if storage_path:
         storage_path = StoragePath.objects.only("pk").get(id=storage_path)
 
@@ -62,7 +62,7 @@ def set_storage_path(doc_ids, storage_path):
     return "OK"
 
 
-def set_document_type(doc_ids, document_type):
+def set_document_type(doc_ids: list[int], document_type):
     if document_type:
         document_type = DocumentType.objects.only("pk").get(id=document_type)
 
@@ -79,7 +79,7 @@ def set_document_type(doc_ids, document_type):
     return "OK"
 
 
-def add_tag(doc_ids, tag):
+def add_tag(doc_ids: list[int], tag: int):
 
     qs = Document.objects.filter(Q(id__in=doc_ids) & ~Q(tags__id=tag)).only("pk")
     affected_docs = list(qs.values_list("pk", flat=True))
@@ -95,7 +95,7 @@ def add_tag(doc_ids, tag):
     return "OK"
 
 
-def remove_tag(doc_ids, tag):
+def remove_tag(doc_ids: list[int], tag: int):
 
     qs = Document.objects.filter(Q(id__in=doc_ids) & Q(tags__id=tag)).only("pk")
     affected_docs = list(qs.values_list("pk", flat=True))
@@ -111,7 +111,7 @@ def remove_tag(doc_ids, tag):
     return "OK"
 
 
-def modify_tags(doc_ids, add_tags, remove_tags):
+def modify_tags(doc_ids: list[int], add_tags: list[int], remove_tags: list[int]):
     qs = Document.objects.filter(id__in=doc_ids).only("pk")
     affected_docs = list(qs.values_list("pk", flat=True))
 
@@ -135,7 +135,7 @@ def modify_tags(doc_ids, add_tags, remove_tags):
     return "OK"
 
 
-def delete(doc_ids):
+def delete(doc_ids: list[int]):
     Document.objects.filter(id__in=doc_ids).delete()
 
     from documents import index
@@ -147,7 +147,7 @@ def delete(doc_ids):
     return "OK"
 
 
-def redo_ocr(doc_ids):
+def redo_ocr(doc_ids: list[int]):
     for document_id in doc_ids:
         update_document_archive_file.delay(
             document_id=document_id,
@@ -156,7 +156,7 @@ def redo_ocr(doc_ids):
     return "OK"
 
 
-def set_permissions(doc_ids, set_permissions, owner=None, merge=False):
+def set_permissions(doc_ids: list[int], set_permissions, owner=None, merge=False):
     qs = Document.objects.filter(id__in=doc_ids).select_related("owner")
 
     if merge:

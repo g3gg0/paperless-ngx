@@ -228,7 +228,7 @@ class PermissionsAwareDocumentCountMixin(PassUserMixin):
                     documents__id__in=get_objects_for_user_owner_aware(
                         self.request.user,
                         "documents.view_document",
-                        Document.objects.only("pk"),
+                        Document,
                     ).values_list("id", flat=True),
                 )
             )
@@ -1106,37 +1106,31 @@ class StatisticsView(APIView):
             else get_objects_for_user_owner_aware(user, "documents.view_tag", Tag)
         )
         correspondent_count = (
-            (
-                Correspondent.objects.count()
-                if user is None
-                else get_objects_for_user_owner_aware(
-                    user,
-                    "documents.view_correspondent",
-                    Correspondent,
-                ).count()
-            ),
+            Correspondent.objects.count()
+            if user is None
+            else get_objects_for_user_owner_aware(
+                user,
+                "documents.view_correspondent",
+                Correspondent,
+            ).count()
         )
         document_type_count = (
-            (
-                DocumentType.objects.count()
-                if user is None
-                else get_objects_for_user_owner_aware(
-                    user,
-                    "documents.view_documenttype",
-                    DocumentType,
-                ).count()
-            ),
+            DocumentType.objects.count()
+            if user is None
+            else get_objects_for_user_owner_aware(
+                user,
+                "documents.view_documenttype",
+                DocumentType,
+            ).count()
         )
         storage_path_count = (
             StoragePath.objects.count()
             if user is None
-            else len(
-                get_objects_for_user_owner_aware(
-                    user,
-                    "documents.view_storagepath",
-                    StoragePath,
-                ),
-            )
+            else get_objects_for_user_owner_aware(
+                user,
+                "documents.view_storagepath",
+                StoragePath,
+            ).count()
         )
 
         documents_total = documents.count()

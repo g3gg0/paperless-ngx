@@ -71,7 +71,10 @@ class TestBulkEditAPI(DirectoriesMixin, APITestCase):
 
     @mock.patch("documents.bulk_edit.bulk_update_documents.delay")
     def test_api_unset_correspondent(self, bulk_update_task_mock):
+        self.doc1.correspondent = self.c1
+        self.doc1.save()
         self.assertIsNotNone(self.doc1.correspondent)
+
         response = self.client.post(
             "/api/documents/bulk_edit/",
             json.dumps(
