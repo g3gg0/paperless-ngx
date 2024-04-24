@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: paperless-ngx\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-07 18:36-0700\n"
-"PO-Revision-Date: 2024-04-08 01:36\n"
+"POT-Creation-Date: 2024-04-19 01:15-0700\n"
+"PO-Revision-Date: 2024-04-24 00:23\n"
 "Last-Translator: \n"
 "Language-Team: Hebrew\n"
 "Language: he_IL\n"
@@ -25,48 +25,48 @@ msgstr "מסמכים"
 msgid "owner"
 msgstr "בעלים"
 
-#: documents/models.py:53 documents/models.py:897
+#: documents/models.py:53 documents/models.py:902
 msgid "None"
 msgstr "ללא"
 
-#: documents/models.py:54 documents/models.py:898
+#: documents/models.py:54 documents/models.py:903
 msgid "Any word"
 msgstr "מילה כלשהי"
 
-#: documents/models.py:55 documents/models.py:899
+#: documents/models.py:55 documents/models.py:904
 msgid "All words"
 msgstr "כל המילים"
 
-#: documents/models.py:56 documents/models.py:900
+#: documents/models.py:56 documents/models.py:905
 msgid "Exact match"
 msgstr "התאמה מדויקת"
 
-#: documents/models.py:57 documents/models.py:901
+#: documents/models.py:57 documents/models.py:906
 msgid "Regular expression"
 msgstr "ביטוי רגולרי"
 
-#: documents/models.py:58 documents/models.py:902
+#: documents/models.py:58 documents/models.py:907
 msgid "Fuzzy word"
-msgstr ""
+msgstr "מילה מעורפלת"
 
 #: documents/models.py:59
 msgid "Automatic"
 msgstr "אוטומטי"
 
-#: documents/models.py:62 documents/models.py:397 documents/models.py:1218
+#: documents/models.py:62 documents/models.py:397 documents/models.py:1223
 #: paperless_mail/models.py:18 paperless_mail/models.py:93
 msgid "name"
 msgstr "שם"
 
-#: documents/models.py:64 documents/models.py:958
+#: documents/models.py:64 documents/models.py:963
 msgid "match"
 msgstr "התאמה"
 
-#: documents/models.py:67 documents/models.py:961
+#: documents/models.py:67 documents/models.py:966
 msgid "matching algorithm"
 msgstr "אלגוריתם התאמה"
 
-#: documents/models.py:72 documents/models.py:966
+#: documents/models.py:72 documents/models.py:971
 msgid "is insensitive"
 msgstr "אינו תלוי רישיות"
 
@@ -365,7 +365,7 @@ msgstr "שאילתת טקסט מלא"
 
 #: documents/models.py:446
 msgid "more like this"
-msgstr ""
+msgstr "עוד כמו זה"
 
 #: documents/models.py:447
 msgid "has tags in"
@@ -611,241 +611,241 @@ msgstr "שדה מותאם אישית"
 msgid "custom field instances"
 msgstr "שדות מותאמים אישית"
 
-#: documents/models.py:905
+#: documents/models.py:910
 msgid "Consumption Started"
-msgstr ""
+msgstr "הצריכה התחילה"
 
-#: documents/models.py:906
+#: documents/models.py:911
 msgid "Document Added"
 msgstr "המסמך התווסף"
 
-#: documents/models.py:907
+#: documents/models.py:912
 msgid "Document Updated"
 msgstr "המסמך עודכן"
 
-#: documents/models.py:910
+#: documents/models.py:915
 msgid "Consume Folder"
 msgstr "עיבוד תיקיה"
 
-#: documents/models.py:911
+#: documents/models.py:916
 msgid "Api Upload"
 msgstr "העלאה באמצעות API"
 
-#: documents/models.py:912
+#: documents/models.py:917
 msgid "Mail Fetch"
 msgstr "הורד מייל"
 
-#: documents/models.py:915
+#: documents/models.py:920
 msgid "Workflow Trigger Type"
 msgstr ""
 
-#: documents/models.py:927
+#: documents/models.py:932
 msgid "filter path"
 msgstr "נתיב מסנן"
 
-#: documents/models.py:932
+#: documents/models.py:937
 msgid "Only consume documents with a path that matches this if specified. Wildcards specified as * are allowed. Case insensitive."
 msgstr "עבד רק קבצים המצוים בנתיב זה אם מוגדר. "
 
-#: documents/models.py:939
+#: documents/models.py:944
 msgid "filter filename"
 msgstr "סנן לפי שם קובץ"
 
-#: documents/models.py:944 paperless_mail/models.py:148
+#: documents/models.py:949 paperless_mail/models.py:148
 msgid "Only consume documents which entirely match this filename if specified. Wildcards such as *.pdf or *invoice* are allowed. Case insensitive."
 msgstr "קבל רק מסמכים שתואמים לחלוטין את שם הקובץ הזה אם צוין. תווים כלליים כגון pdf.* או *חשבונית* מותרים. חסר רגישות תווים גדולים/קטנים (אנגלית)."
 
-#: documents/models.py:955
+#: documents/models.py:960
 msgid "filter documents from this mail rule"
 msgstr "סנן מסמכים לפי כלל המייל הזה"
 
-#: documents/models.py:971
+#: documents/models.py:976
 msgid "has these tag(s)"
 msgstr ""
 
-#: documents/models.py:979
+#: documents/models.py:984
 msgid "has this document type"
-msgstr ""
+msgstr "יש את סוג המסמך זה"
 
-#: documents/models.py:987
+#: documents/models.py:992
 msgid "has this correspondent"
-msgstr ""
+msgstr "יש את המכותב זה"
 
-#: documents/models.py:991
+#: documents/models.py:996
 msgid "workflow trigger"
 msgstr ""
 
-#: documents/models.py:992
+#: documents/models.py:997
 msgid "workflow triggers"
 msgstr ""
 
-#: documents/models.py:1002
+#: documents/models.py:1007
 msgid "Assignment"
-msgstr ""
+msgstr "הקצאה"
 
-#: documents/models.py:1006
+#: documents/models.py:1011
 msgid "Removal"
 msgstr "הסרה"
 
-#: documents/models.py:1010
+#: documents/models.py:1015
 msgid "Workflow Action Type"
 msgstr ""
 
-#: documents/models.py:1016
+#: documents/models.py:1021
 msgid "assign title"
 msgstr "הקצה כותרת"
 
-#: documents/models.py:1021
+#: documents/models.py:1026
 msgid "Assign a document title, can include some placeholders, see documentation."
 msgstr "הקצה כותרת למסמך, תוכל להשתמש במראה מקומות. בדוק כיצד במדריך למשתמש"
 
-#: documents/models.py:1030 paperless_mail/models.py:216
+#: documents/models.py:1035 paperless_mail/models.py:216
 msgid "assign this tag"
 msgstr "שייך תגית זו"
 
-#: documents/models.py:1039 paperless_mail/models.py:224
+#: documents/models.py:1044 paperless_mail/models.py:224
 msgid "assign this document type"
 msgstr "שייך סוג מסמך זה"
 
-#: documents/models.py:1048 paperless_mail/models.py:238
+#: documents/models.py:1053 paperless_mail/models.py:238
 msgid "assign this correspondent"
 msgstr "שייך מכותב זה"
 
-#: documents/models.py:1057
+#: documents/models.py:1062
 msgid "assign this storage path"
 msgstr "הקצה נתיב אחסון זה"
 
-#: documents/models.py:1066
+#: documents/models.py:1071
 msgid "assign this owner"
 msgstr "הקצה בעלים זה"
 
-#: documents/models.py:1073
+#: documents/models.py:1078
 msgid "grant view permissions to these users"
 msgstr "אפשר זכויות צפיה בקובץ למשתמשים אלו"
 
-#: documents/models.py:1080
+#: documents/models.py:1085
 msgid "grant view permissions to these groups"
 msgstr "אפשר זכויות צפיה בקובץ לקבוצות אלו"
 
-#: documents/models.py:1087
+#: documents/models.py:1092
 msgid "grant change permissions to these users"
 msgstr "אפשר זכויות שינוי הגדרות צפיה בקובץ למשתמשים אלו"
 
-#: documents/models.py:1094
+#: documents/models.py:1099
 msgid "grant change permissions to these groups"
 msgstr "אפשר זכויות שינוי הגדרות צפיה בקובץ לקבוצות אלו"
 
-#: documents/models.py:1101
+#: documents/models.py:1106
 msgid "assign these custom fields"
 msgstr "הקצה שדות מותאמים אישית אלו "
 
-#: documents/models.py:1108
-msgid "remove these tag(s)"
-msgstr ""
-
 #: documents/models.py:1113
-msgid "remove all tags"
-msgstr ""
+msgid "remove these tag(s)"
+msgstr "הסר את התגים האלה"
 
-#: documents/models.py:1120
-msgid "remove these document type(s)"
-msgstr ""
+#: documents/models.py:1118
+msgid "remove all tags"
+msgstr "הסרת כל התגיות"
 
 #: documents/models.py:1125
-msgid "remove all document types"
-msgstr ""
+msgid "remove these document type(s)"
+msgstr "הסר סוגי מסמכים"
 
-#: documents/models.py:1132
-msgid "remove these correspondent(s)"
-msgstr ""
+#: documents/models.py:1130
+msgid "remove all document types"
+msgstr "הסר את כל סוגי מסמכים"
 
 #: documents/models.py:1137
-msgid "remove all correspondents"
-msgstr ""
+msgid "remove these correspondent(s)"
+msgstr "הסר מכותבים"
 
-#: documents/models.py:1144
-msgid "remove these storage path(s)"
-msgstr ""
+#: documents/models.py:1142
+msgid "remove all correspondents"
+msgstr "הסר את כל המכותבים"
 
 #: documents/models.py:1149
-msgid "remove all storage paths"
-msgstr ""
+msgid "remove these storage path(s)"
+msgstr "הסר מקומות האכסון"
 
-#: documents/models.py:1156
-msgid "remove these owner(s)"
-msgstr ""
+#: documents/models.py:1154
+msgid "remove all storage paths"
+msgstr "הסר את כל מקומות האכסון"
 
 #: documents/models.py:1161
+msgid "remove these owner(s)"
+msgstr "הסר את הבעלים האלה"
+
+#: documents/models.py:1166
 msgid "remove all owners"
-msgstr ""
+msgstr "הסרת כל הבעלים"
 
-#: documents/models.py:1168
+#: documents/models.py:1173
 msgid "remove view permissions for these users"
-msgstr ""
+msgstr "הסר זכויות צפיה בקובץ למשתמשים אלו"
 
-#: documents/models.py:1175
+#: documents/models.py:1180
 msgid "remove view permissions for these groups"
-msgstr ""
+msgstr "הסר זכויות צפיה בקובץ לקבוצות אלו"
 
-#: documents/models.py:1182
+#: documents/models.py:1187
 msgid "remove change permissions for these users"
-msgstr ""
-
-#: documents/models.py:1189
-msgid "remove change permissions for these groups"
-msgstr ""
+msgstr "הסר זכויות שינוי הגדרות צפיה בקובץ למשתמשים אלו"
 
 #: documents/models.py:1194
-msgid "remove all permissions"
-msgstr ""
+msgid "remove change permissions for these groups"
+msgstr "הסר זכויות שינוי הגדרות שינוי בקובץ לקבוצות האלו"
 
-#: documents/models.py:1201
+#: documents/models.py:1199
+msgid "remove all permissions"
+msgstr "הסר את כל ההרשאות"
+
+#: documents/models.py:1206
 msgid "remove these custom fields"
 msgstr ""
 
-#: documents/models.py:1206
+#: documents/models.py:1211
 msgid "remove all custom fields"
 msgstr ""
 
-#: documents/models.py:1210
+#: documents/models.py:1215
 msgid "workflow action"
 msgstr ""
 
-#: documents/models.py:1211
+#: documents/models.py:1216
 msgid "workflow actions"
 msgstr ""
 
-#: documents/models.py:1220 paperless_mail/models.py:95
+#: documents/models.py:1225 paperless_mail/models.py:95
 msgid "order"
 msgstr "סדר"
 
-#: documents/models.py:1226
+#: documents/models.py:1231
 msgid "triggers"
-msgstr ""
+msgstr "גורמים מפעילים"
 
-#: documents/models.py:1233
+#: documents/models.py:1238
 msgid "actions"
 msgstr "פעולות"
 
-#: documents/models.py:1236
+#: documents/models.py:1241
 msgid "enabled"
 msgstr "פעיל"
 
-#: documents/serialisers.py:114
+#: documents/serialisers.py:115
 #, python-format
 msgid "Invalid regular expression: %(error)s"
 msgstr "ביטוי רגולרי בלתי חוקי: %(error)s"
 
-#: documents/serialisers.py:417
+#: documents/serialisers.py:418
 msgid "Invalid color."
 msgstr "צבע לא חוקי."
 
-#: documents/serialisers.py:1143
+#: documents/serialisers.py:1148
 #, python-format
 msgid "File type %(type)s not supported"
 msgstr "סוג קובץ %(type)s לא נתמך"
 
-#: documents/serialisers.py:1252
+#: documents/serialisers.py:1257
 msgid "Invalid variable detected."
 msgstr "משתנה לא חוקי זוהה."
 
@@ -978,16 +978,16 @@ msgstr ""
 #: documents/templates/account/signup.html:16
 #: documents/templates/socialaccount/signup.html:14
 msgid "Email (optional)"
-msgstr ""
+msgstr "דואר אלקטרוני/אימייל (אופציונלי)"
 
 #: documents/templates/account/signup.html:18
 msgid "Password (again)"
-msgstr ""
+msgstr "סיסמה (שוב)"
 
 #: documents/templates/account/signup.html:36
 #: documents/templates/socialaccount/signup.html:27
 msgid "Sign up"
-msgstr ""
+msgstr "התחבר"
 
 #: documents/templates/index.html:61
 msgid "Paperless-ngx is loading..."
@@ -1204,131 +1204,131 @@ msgstr ""
 msgid "paperless application settings"
 msgstr ""
 
-#: paperless/settings.py:666
+#: paperless/settings.py:662
 msgid "English (US)"
 msgstr "אנגלית (ארה״ב)"
 
-#: paperless/settings.py:667
+#: paperless/settings.py:663
 msgid "Arabic"
 msgstr "ערבית"
 
-#: paperless/settings.py:668
+#: paperless/settings.py:664
 msgid "Afrikaans"
 msgstr "אפריקאנס"
 
-#: paperless/settings.py:669
+#: paperless/settings.py:665
 msgid "Belarusian"
 msgstr "בלרוסית"
 
-#: paperless/settings.py:670
+#: paperless/settings.py:666
 msgid "Bulgarian"
 msgstr "בולגרית"
 
-#: paperless/settings.py:671
+#: paperless/settings.py:667
 msgid "Catalan"
 msgstr "קטלאנית"
 
-#: paperless/settings.py:672
+#: paperless/settings.py:668
 msgid "Czech"
 msgstr "צ'כית"
 
-#: paperless/settings.py:673
+#: paperless/settings.py:669
 msgid "Danish"
 msgstr "דנית"
 
-#: paperless/settings.py:674
+#: paperless/settings.py:670
 msgid "German"
 msgstr "גרמנית"
 
-#: paperless/settings.py:675
+#: paperless/settings.py:671
 msgid "Greek"
 msgstr "יוונית"
 
-#: paperless/settings.py:676
+#: paperless/settings.py:672
 msgid "English (GB)"
 msgstr "אנגלית (בריטניה)"
 
-#: paperless/settings.py:677
+#: paperless/settings.py:673
 msgid "Spanish"
 msgstr "ספרדית"
 
-#: paperless/settings.py:678
+#: paperless/settings.py:674
 msgid "Finnish"
 msgstr "פינית"
 
-#: paperless/settings.py:679
+#: paperless/settings.py:675
 msgid "French"
 msgstr "צרפתית"
 
-#: paperless/settings.py:680
+#: paperless/settings.py:676
 msgid "Hungarian"
 msgstr "הונגרית"
 
-#: paperless/settings.py:681
+#: paperless/settings.py:677
 msgid "Italian"
 msgstr "איטלקית"
 
-#: paperless/settings.py:682
+#: paperless/settings.py:678
 msgid "Japanese"
 msgstr ""
 
-#: paperless/settings.py:683
+#: paperless/settings.py:679
 msgid "Luxembourgish"
 msgstr "לוקסמבורגית"
 
-#: paperless/settings.py:684
+#: paperless/settings.py:680
 msgid "Norwegian"
 msgstr "נורווגית"
 
-#: paperless/settings.py:685
+#: paperless/settings.py:681
 msgid "Dutch"
 msgstr "הולנדית"
 
-#: paperless/settings.py:686
+#: paperless/settings.py:682
 msgid "Polish"
 msgstr "פולנית"
 
-#: paperless/settings.py:687
+#: paperless/settings.py:683
 msgid "Portuguese (Brazil)"
 msgstr "פורטוגלית ברזילאית"
 
-#: paperless/settings.py:688
+#: paperless/settings.py:684
 msgid "Portuguese"
 msgstr "פורטוגלית"
 
-#: paperless/settings.py:689
+#: paperless/settings.py:685
 msgid "Romanian"
 msgstr "רומנית"
 
-#: paperless/settings.py:690
+#: paperless/settings.py:686
 msgid "Russian"
 msgstr "רוסית"
 
-#: paperless/settings.py:691
+#: paperless/settings.py:687
 msgid "Slovak"
 msgstr "סלובקית"
 
-#: paperless/settings.py:692
+#: paperless/settings.py:688
 msgid "Slovenian"
 msgstr "סלובנית"
 
-#: paperless/settings.py:693
+#: paperless/settings.py:689
 msgid "Serbian"
 msgstr "סרבית"
 
-#: paperless/settings.py:694
+#: paperless/settings.py:690
 msgid "Swedish"
 msgstr "שוודית"
 
-#: paperless/settings.py:695
+#: paperless/settings.py:691
 msgid "Turkish"
 msgstr "טורקית"
 
-#: paperless/settings.py:696
+#: paperless/settings.py:692
 msgid "Ukrainian"
 msgstr "אוקראינית"
 
-#: paperless/settings.py:697
+#: paperless/settings.py:693
 msgid "Chinese Simplified"
 msgstr "סינית מפושטת"
 

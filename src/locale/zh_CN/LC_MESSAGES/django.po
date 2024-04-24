@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: paperless-ngx\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-07 18:36-0700\n"
-"PO-Revision-Date: 2024-04-08 01:36\n"
+"POT-Creation-Date: 2024-04-19 01:15-0700\n"
+"PO-Revision-Date: 2024-04-23 15:17\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -25,27 +25,27 @@ msgstr "文档"
 msgid "owner"
 msgstr "所有者"
 
-#: documents/models.py:53 documents/models.py:897
+#: documents/models.py:53 documents/models.py:902
 msgid "None"
 msgstr "无"
 
-#: documents/models.py:54 documents/models.py:898
+#: documents/models.py:54 documents/models.py:903
 msgid "Any word"
 msgstr "任意单词"
 
-#: documents/models.py:55 documents/models.py:899
+#: documents/models.py:55 documents/models.py:904
 msgid "All words"
 msgstr "所有单词"
 
-#: documents/models.py:56 documents/models.py:900
+#: documents/models.py:56 documents/models.py:905
 msgid "Exact match"
 msgstr "精确匹配"
 
-#: documents/models.py:57 documents/models.py:901
+#: documents/models.py:57 documents/models.py:906
 msgid "Regular expression"
 msgstr "正则表达式"
 
-#: documents/models.py:58 documents/models.py:902
+#: documents/models.py:58 documents/models.py:907
 msgid "Fuzzy word"
 msgstr "模糊单词"
 
@@ -53,20 +53,20 @@ msgstr "模糊单词"
 msgid "Automatic"
 msgstr "自动"
 
-#: documents/models.py:62 documents/models.py:397 documents/models.py:1218
+#: documents/models.py:62 documents/models.py:397 documents/models.py:1223
 #: paperless_mail/models.py:18 paperless_mail/models.py:93
 msgid "name"
 msgstr "名称"
 
-#: documents/models.py:64 documents/models.py:958
+#: documents/models.py:64 documents/models.py:963
 msgid "match"
 msgstr "匹配"
 
-#: documents/models.py:67 documents/models.py:961
+#: documents/models.py:67 documents/models.py:966
 msgid "matching algorithm"
 msgstr "匹配算法"
 
-#: documents/models.py:72 documents/models.py:966
+#: documents/models.py:72 documents/models.py:971
 msgid "is insensitive"
 msgstr "忽略大小写"
 
@@ -611,241 +611,241 @@ msgstr "自定义字段实例"
 msgid "custom field instances"
 msgstr "自定义字段实例"
 
-#: documents/models.py:905
+#: documents/models.py:910
 msgid "Consumption Started"
 msgstr "消费已开始"
 
-#: documents/models.py:906
+#: documents/models.py:911
 msgid "Document Added"
 msgstr "文档已添加"
 
-#: documents/models.py:907
+#: documents/models.py:912
 msgid "Document Updated"
 msgstr "文档已更新"
 
-#: documents/models.py:910
+#: documents/models.py:915
 msgid "Consume Folder"
 msgstr "消费文件夹"
 
-#: documents/models.py:911
+#: documents/models.py:916
 msgid "Api Upload"
 msgstr "Api上传"
 
-#: documents/models.py:912
+#: documents/models.py:917
 msgid "Mail Fetch"
 msgstr "邮件获取"
 
-#: documents/models.py:915
+#: documents/models.py:920
 msgid "Workflow Trigger Type"
 msgstr "工作流触发器类型"
 
-#: documents/models.py:927
+#: documents/models.py:932
 msgid "filter path"
 msgstr "过滤路径"
 
-#: documents/models.py:932
+#: documents/models.py:937
 msgid "Only consume documents with a path that matches this if specified. Wildcards specified as * are allowed. Case insensitive."
 msgstr "只消耗匹配了指定路径的文档。路径指定中允许使用*作为通配符，大小写不敏感。"
 
-#: documents/models.py:939
+#: documents/models.py:944
 msgid "filter filename"
 msgstr "过滤文件名"
 
-#: documents/models.py:944 paperless_mail/models.py:148
+#: documents/models.py:949 paperless_mail/models.py:148
 msgid "Only consume documents which entirely match this filename if specified. Wildcards such as *.pdf or *invoice* are allowed. Case insensitive."
 msgstr "如果指定了文件名，只处理完全匹配此文件名的文档。允许使用通配符，如 *.pdf 或 *发票*。不区分大小写。"
 
-#: documents/models.py:955
+#: documents/models.py:960
 msgid "filter documents from this mail rule"
 msgstr "从邮件规则中过滤文档"
 
-#: documents/models.py:971
+#: documents/models.py:976
 msgid "has these tag(s)"
 msgstr "含有这些标签"
 
-#: documents/models.py:979
+#: documents/models.py:984
 msgid "has this document type"
 msgstr "具有此文档类型"
 
-#: documents/models.py:987
+#: documents/models.py:992
 msgid "has this correspondent"
 msgstr "已有此联系人"
 
-#: documents/models.py:991
+#: documents/models.py:996
 msgid "workflow trigger"
 msgstr "工作流触发器"
 
-#: documents/models.py:992
+#: documents/models.py:997
 msgid "workflow triggers"
 msgstr "工作流触发器"
 
-#: documents/models.py:1002
+#: documents/models.py:1007
 msgid "Assignment"
 msgstr "分配任务"
 
-#: documents/models.py:1006
+#: documents/models.py:1011
 msgid "Removal"
 msgstr "移除"
 
-#: documents/models.py:1010
+#: documents/models.py:1015
 msgid "Workflow Action Type"
 msgstr "工作流动作类型"
 
-#: documents/models.py:1016
+#: documents/models.py:1021
 msgid "assign title"
 msgstr "指定标题"
 
-#: documents/models.py:1021
+#: documents/models.py:1026
 msgid "Assign a document title, can include some placeholders, see documentation."
 msgstr "指定一个文档标题，可以包含一些占位符，参见文档。"
 
-#: documents/models.py:1030 paperless_mail/models.py:216
+#: documents/models.py:1035 paperless_mail/models.py:216
 msgid "assign this tag"
 msgstr "分配此标签"
 
-#: documents/models.py:1039 paperless_mail/models.py:224
+#: documents/models.py:1044 paperless_mail/models.py:224
 msgid "assign this document type"
 msgstr "分配此文档类型"
 
-#: documents/models.py:1048 paperless_mail/models.py:238
+#: documents/models.py:1053 paperless_mail/models.py:238
 msgid "assign this correspondent"
 msgstr "分配此联系人"
 
-#: documents/models.py:1057
+#: documents/models.py:1062
 msgid "assign this storage path"
 msgstr "指定存储路径"
 
-#: documents/models.py:1066
+#: documents/models.py:1071
 msgid "assign this owner"
 msgstr "指定所有者"
 
-#: documents/models.py:1073
+#: documents/models.py:1078
 msgid "grant view permissions to these users"
 msgstr "为这些用户授予观看权限"
 
-#: documents/models.py:1080
+#: documents/models.py:1085
 msgid "grant view permissions to these groups"
 msgstr "为这些用户组授予观看权限"
 
-#: documents/models.py:1087
+#: documents/models.py:1092
 msgid "grant change permissions to these users"
 msgstr "为这些用户授予修改权限"
 
-#: documents/models.py:1094
+#: documents/models.py:1099
 msgid "grant change permissions to these groups"
 msgstr "为这些用户组授予修改权限"
 
-#: documents/models.py:1101
+#: documents/models.py:1106
 msgid "assign these custom fields"
 msgstr "分配这些自定义字段"
 
-#: documents/models.py:1108
+#: documents/models.py:1113
 msgid "remove these tag(s)"
 msgstr "移除这些标签"
 
-#: documents/models.py:1113
+#: documents/models.py:1118
 msgid "remove all tags"
 msgstr "删除所有的标签"
 
-#: documents/models.py:1120
+#: documents/models.py:1125
 msgid "remove these document type(s)"
 msgstr "移除这些文档类型 "
 
-#: documents/models.py:1125
+#: documents/models.py:1130
 msgid "remove all document types"
 msgstr "移除所有文档类型"
 
-#: documents/models.py:1132
+#: documents/models.py:1137
 msgid "remove these correspondent(s)"
 msgstr "移除这些通讯员"
 
-#: documents/models.py:1137
+#: documents/models.py:1142
 msgid "remove all correspondents"
 msgstr "移除所有通讯员"
 
-#: documents/models.py:1144
+#: documents/models.py:1149
 msgid "remove these storage path(s)"
 msgstr "移除这些存储路径"
 
-#: documents/models.py:1149
+#: documents/models.py:1154
 msgid "remove all storage paths"
 msgstr "移除全部存储路径"
 
-#: documents/models.py:1156
+#: documents/models.py:1161
 msgid "remove these owner(s)"
 msgstr "移除这些所有者 "
 
-#: documents/models.py:1161
+#: documents/models.py:1166
 msgid "remove all owners"
 msgstr "移除所有所有者"
 
-#: documents/models.py:1168
+#: documents/models.py:1173
 msgid "remove view permissions for these users"
 msgstr "移除这些用户的查看权限"
 
-#: documents/models.py:1175
+#: documents/models.py:1180
 msgid "remove view permissions for these groups"
 msgstr "移除这些组的查看权限"
 
-#: documents/models.py:1182
+#: documents/models.py:1187
 msgid "remove change permissions for these users"
 msgstr "为这些用户授予修改权限"
 
-#: documents/models.py:1189
+#: documents/models.py:1194
 msgid "remove change permissions for these groups"
 msgstr "移除这些组的更改权限"
 
-#: documents/models.py:1194
+#: documents/models.py:1199
 msgid "remove all permissions"
 msgstr "移除所有权限"
 
-#: documents/models.py:1201
+#: documents/models.py:1206
 msgid "remove these custom fields"
 msgstr "移除这些自定义字段"
 
-#: documents/models.py:1206
+#: documents/models.py:1211
 msgid "remove all custom fields"
 msgstr "移除所有自定义字段"
 
-#: documents/models.py:1210
+#: documents/models.py:1215
 msgid "workflow action"
 msgstr "工作流动作"
 
-#: documents/models.py:1211
+#: documents/models.py:1216
 msgid "workflow actions"
 msgstr "工作流动作"
 
-#: documents/models.py:1220 paperless_mail/models.py:95
+#: documents/models.py:1225 paperless_mail/models.py:95
 msgid "order"
 msgstr "排序"
 
-#: documents/models.py:1226
+#: documents/models.py:1231
 msgid "triggers"
 msgstr "触发器"
 
-#: documents/models.py:1233
+#: documents/models.py:1238
 msgid "actions"
 msgstr "动作"
 
-#: documents/models.py:1236
+#: documents/models.py:1241
 msgid "enabled"
 msgstr "已启用"
 
-#: documents/serialisers.py:114
+#: documents/serialisers.py:115
 #, python-format
 msgid "Invalid regular expression: %(error)s"
 msgstr "无效的正则表达式：%(error)s"
 
-#: documents/serialisers.py:417
+#: documents/serialisers.py:418
 msgid "Invalid color."
 msgstr "无效的颜色"
 
-#: documents/serialisers.py:1143
+#: documents/serialisers.py:1148
 #, python-format
 msgid "File type %(type)s not supported"
 msgstr "不支持文件类型 %(type)s"
 
-#: documents/serialisers.py:1252
+#: documents/serialisers.py:1257
 msgid "Invalid variable detected."
 msgstr "检测到无效变量。"
 
@@ -1205,131 +1205,131 @@ msgstr "应用程序图标"
 msgid "paperless application settings"
 msgstr "无纸应用设置"
 
-#: paperless/settings.py:666
+#: paperless/settings.py:662
 msgid "English (US)"
 msgstr "英语(美国)"
 
-#: paperless/settings.py:667
+#: paperless/settings.py:663
 msgid "Arabic"
 msgstr "阿拉伯语"
 
-#: paperless/settings.py:668
+#: paperless/settings.py:664
 msgid "Afrikaans"
 msgstr "Afrikaans 荷兰语"
 
-#: paperless/settings.py:669
+#: paperless/settings.py:665
 msgid "Belarusian"
 msgstr "白俄罗斯语"
 
-#: paperless/settings.py:670
+#: paperless/settings.py:666
 msgid "Bulgarian"
 msgstr "保加利亚语"
 
-#: paperless/settings.py:671
+#: paperless/settings.py:667
 msgid "Catalan"
 msgstr "Catalan 加泰罗尼亚语"
 
-#: paperless/settings.py:672
+#: paperless/settings.py:668
 msgid "Czech"
 msgstr "捷克语"
 
-#: paperless/settings.py:673
+#: paperless/settings.py:669
 msgid "Danish"
 msgstr "丹麦语"
 
-#: paperless/settings.py:674
+#: paperless/settings.py:670
 msgid "German"
 msgstr "德语"
 
-#: paperless/settings.py:675
+#: paperless/settings.py:671
 msgid "Greek"
 msgstr "Greek 希腊语"
 
-#: paperless/settings.py:676
+#: paperless/settings.py:672
 msgid "English (GB)"
 msgstr "英语(英国)"
 
-#: paperless/settings.py:677
+#: paperless/settings.py:673
 msgid "Spanish"
 msgstr "西班牙语"
 
-#: paperless/settings.py:678
+#: paperless/settings.py:674
 msgid "Finnish"
 msgstr "已完成"
 
-#: paperless/settings.py:679
+#: paperless/settings.py:675
 msgid "French"
 msgstr "法语"
 
-#: paperless/settings.py:680
+#: paperless/settings.py:676
 msgid "Hungarian"
 msgstr "匈牙利语"
 
-#: paperless/settings.py:681
+#: paperless/settings.py:677
 msgid "Italian"
 msgstr "意大利语"
 
-#: paperless/settings.py:682
+#: paperless/settings.py:678
 msgid "Japanese"
 msgstr "日语"
 
-#: paperless/settings.py:683
+#: paperless/settings.py:679
 msgid "Luxembourgish"
 msgstr "卢森堡语"
 
-#: paperless/settings.py:684
+#: paperless/settings.py:680
 msgid "Norwegian"
 msgstr "Norwegian 挪威语"
 
-#: paperless/settings.py:685
+#: paperless/settings.py:681
 msgid "Dutch"
 msgstr "荷兰语"
 
-#: paperless/settings.py:686
+#: paperless/settings.py:682
 msgid "Polish"
 msgstr "波兰语"
 
-#: paperless/settings.py:687
+#: paperless/settings.py:683
 msgid "Portuguese (Brazil)"
 msgstr "葡萄牙语 (巴西)"
 
-#: paperless/settings.py:688
+#: paperless/settings.py:684
 msgid "Portuguese"
 msgstr "葡萄牙语"
 
-#: paperless/settings.py:689
+#: paperless/settings.py:685
 msgid "Romanian"
 msgstr "罗马尼亚语"
 
-#: paperless/settings.py:690
+#: paperless/settings.py:686
 msgid "Russian"
 msgstr "俄语"
 
-#: paperless/settings.py:691
+#: paperless/settings.py:687
 msgid "Slovak"
 msgstr "Slovak 斯洛伐克语"
 
-#: paperless/settings.py:692
+#: paperless/settings.py:688
 msgid "Slovenian"
 msgstr "斯洛语尼亚语"
 
-#: paperless/settings.py:693
+#: paperless/settings.py:689
 msgid "Serbian"
 msgstr "塞尔维亚语"
 
-#: paperless/settings.py:694
+#: paperless/settings.py:690
 msgid "Swedish"
 msgstr "瑞典语"
 
-#: paperless/settings.py:695
+#: paperless/settings.py:691
 msgid "Turkish"
 msgstr "土耳其语"
 
-#: paperless/settings.py:696
+#: paperless/settings.py:692
 msgid "Ukrainian"
 msgstr "Ukrainian 乌克兰语"
 
-#: paperless/settings.py:697
+#: paperless/settings.py:693
 msgid "Chinese Simplified"
 msgstr "简体中文"
 

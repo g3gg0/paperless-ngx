@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: paperless-ngx\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-07 18:36-0700\n"
-"PO-Revision-Date: 2024-04-08 01:36\n"
+"POT-Creation-Date: 2024-04-19 01:15-0700\n"
+"PO-Revision-Date: 2024-04-24 12:10\n"
 "Last-Translator: \n"
 "Language-Team: Korean\n"
 "Language: ko_KR\n"
@@ -25,58 +25,58 @@ msgstr "문서"
 msgid "owner"
 msgstr "소유자"
 
-#: documents/models.py:53 documents/models.py:897
+#: documents/models.py:53 documents/models.py:902
 msgid "None"
 msgstr "없음"
 
-#: documents/models.py:54 documents/models.py:898
+#: documents/models.py:54 documents/models.py:903
 msgid "Any word"
 msgstr "아무 단어"
 
-#: documents/models.py:55 documents/models.py:899
+#: documents/models.py:55 documents/models.py:904
 msgid "All words"
 msgstr "모든 단어"
 
-#: documents/models.py:56 documents/models.py:900
+#: documents/models.py:56 documents/models.py:905
 msgid "Exact match"
 msgstr "정확히 일치"
 
-#: documents/models.py:57 documents/models.py:901
+#: documents/models.py:57 documents/models.py:906
 msgid "Regular expression"
 msgstr "정규 표현식"
 
-#: documents/models.py:58 documents/models.py:902
+#: documents/models.py:58 documents/models.py:907
 msgid "Fuzzy word"
-msgstr ""
+msgstr "불분명한 단어"
 
 #: documents/models.py:59
 msgid "Automatic"
-msgstr ""
+msgstr "자동"
 
-#: documents/models.py:62 documents/models.py:397 documents/models.py:1218
+#: documents/models.py:62 documents/models.py:397 documents/models.py:1223
 #: paperless_mail/models.py:18 paperless_mail/models.py:93
 msgid "name"
 msgstr "이름"
 
-#: documents/models.py:64 documents/models.py:958
+#: documents/models.py:64 documents/models.py:963
 msgid "match"
 msgstr "일치"
 
-#: documents/models.py:67 documents/models.py:961
+#: documents/models.py:67 documents/models.py:966
 msgid "matching algorithm"
 msgstr "일치 알고리즘"
 
-#: documents/models.py:72 documents/models.py:966
+#: documents/models.py:72 documents/models.py:971
 msgid "is insensitive"
 msgstr "대소문자 구분 없음"
 
 #: documents/models.py:95 documents/models.py:147
 msgid "correspondent"
-msgstr ""
+msgstr "할당대상"
 
 #: documents/models.py:96
 msgid "correspondents"
-msgstr ""
+msgstr "할당자"
 
 #: documents/models.py:100
 msgid "color"
@@ -84,11 +84,11 @@ msgstr "색상"
 
 #: documents/models.py:103
 msgid "is inbox tag"
-msgstr ""
+msgstr "받은 보관함 태그"
 
 #: documents/models.py:106
 msgid "Marks this tag as an inbox tag: All newly consumed documents will be tagged with inbox tags."
-msgstr ""
+msgstr "이 태그를 수신함 태그로 표시합니다: 새로 수집된 모든 문서에는 수신함 태그가 지정됩니다."
 
 #: documents/models.py:112
 msgid "tag"
@@ -273,19 +273,19 @@ msgstr "역순으로 정렬"
 
 #: documents/models.py:416 documents/models.py:469
 msgid "saved view"
-msgstr ""
+msgstr "저장된 뷰"
 
 #: documents/models.py:417
 msgid "saved views"
-msgstr ""
+msgstr "저장된 뷰"
 
 #: documents/models.py:425
 msgid "title contains"
-msgstr ""
+msgstr "제목 포함"
 
 #: documents/models.py:426
 msgid "content contains"
-msgstr ""
+msgstr "내용 포함"
 
 #: documents/models.py:427
 msgid "ASN is"
@@ -293,115 +293,115 @@ msgstr ""
 
 #: documents/models.py:428
 msgid "correspondent is"
-msgstr ""
+msgstr "할당대상"
 
 #: documents/models.py:429
 msgid "document type is"
-msgstr ""
+msgstr "문서 유형"
 
 #: documents/models.py:430
 msgid "is in inbox"
-msgstr ""
+msgstr "문서함에 있음"
 
 #: documents/models.py:431
 msgid "has tag"
-msgstr ""
+msgstr "태그가 있음"
 
 #: documents/models.py:432
 msgid "has any tag"
-msgstr ""
+msgstr "어떤 태그라도 있을 경우"
 
 #: documents/models.py:433
 msgid "created before"
-msgstr ""
+msgstr "이전에 생성됨"
 
 #: documents/models.py:434
 msgid "created after"
-msgstr ""
+msgstr "이후에 생성됨"
 
 #: documents/models.py:435
 msgid "created year is"
-msgstr ""
+msgstr "생성 연도는"
 
 #: documents/models.py:436
 msgid "created month is"
-msgstr ""
+msgstr "생성 월은"
 
 #: documents/models.py:437
 msgid "created day is"
-msgstr ""
+msgstr "생성일은"
 
 #: documents/models.py:438
 msgid "added before"
-msgstr ""
+msgstr "이전에 추가됨"
 
 #: documents/models.py:439
 msgid "added after"
-msgstr ""
+msgstr "이후에 추가됨"
 
 #: documents/models.py:440
 msgid "modified before"
-msgstr ""
+msgstr "이전에 수정됨"
 
 #: documents/models.py:441
 msgid "modified after"
-msgstr ""
+msgstr "이후에 수정됨"
 
 #: documents/models.py:442
 msgid "does not have tag"
-msgstr ""
+msgstr "태그가 없음"
 
 #: documents/models.py:443
 msgid "does not have ASN"
-msgstr ""
+msgstr "ASN이 없음"
 
 #: documents/models.py:444
 msgid "title or content contains"
-msgstr ""
+msgstr "제목 또는 내용이 포함"
 
 #: documents/models.py:445
 msgid "fulltext query"
-msgstr ""
+msgstr "전문 검색 쿼리"
 
 #: documents/models.py:446
 msgid "more like this"
-msgstr ""
+msgstr "이와 유사한"
 
 #: documents/models.py:447
 msgid "has tags in"
-msgstr ""
+msgstr "태그가 포함된"
 
 #: documents/models.py:448
 msgid "ASN greater than"
-msgstr ""
+msgstr "ASN이 초과됨"
 
 #: documents/models.py:449
 msgid "ASN less than"
-msgstr ""
+msgstr "ASN 미만"
 
 #: documents/models.py:450
 msgid "storage path is"
-msgstr ""
+msgstr "저장경로"
 
 #: documents/models.py:451
 msgid "has correspondent in"
-msgstr ""
+msgstr "할당 대상"
 
 #: documents/models.py:452
 msgid "does not have correspondent in"
-msgstr ""
+msgstr "해당 사항에 대한 대응이 없음"
 
 #: documents/models.py:453
 msgid "has document type in"
-msgstr ""
+msgstr "문서 유형"
 
 #: documents/models.py:454
 msgid "does not have document type in"
-msgstr ""
+msgstr "문서 유형이 없음"
 
 #: documents/models.py:455
 msgid "has storage path in"
-msgstr ""
+msgstr "저장 경로가 있는"
 
 #: documents/models.py:456
 msgid "does not have storage path in"
@@ -409,7 +409,7 @@ msgstr ""
 
 #: documents/models.py:457
 msgid "owner is"
-msgstr ""
+msgstr "소유자는"
 
 #: documents/models.py:458
 msgid "has owner in"
@@ -417,23 +417,23 @@ msgstr ""
 
 #: documents/models.py:459
 msgid "does not have owner"
-msgstr ""
+msgstr "소유자가 없음"
 
 #: documents/models.py:460
 msgid "does not have owner in"
-msgstr ""
+msgstr "소유자가 없음"
 
 #: documents/models.py:461
 msgid "has custom field value"
-msgstr ""
+msgstr "사용자 정의 필드 값이 있음"
 
 #: documents/models.py:462
 msgid "is shared by me"
-msgstr ""
+msgstr "내가 공유"
 
 #: documents/models.py:472
 msgid "rule type"
-msgstr ""
+msgstr "룰 타잎"
 
 #: documents/models.py:474
 msgid "value"
@@ -441,11 +441,11 @@ msgstr "값"
 
 #: documents/models.py:477
 msgid "filter rule"
-msgstr ""
+msgstr "룰 필터"
 
 #: documents/models.py:478
 msgid "filter rules"
-msgstr ""
+msgstr "필터 룰"
 
 #: documents/models.py:589
 msgid "Task ID"
@@ -453,15 +453,15 @@ msgstr "작업 ID"
 
 #: documents/models.py:590
 msgid "Celery ID for the Task that was run"
-msgstr ""
+msgstr "실행된 작업의 셀러리 ID"
 
 #: documents/models.py:595
 msgid "Acknowledged"
-msgstr ""
+msgstr "인정됨"
 
 #: documents/models.py:596
 msgid "If the task is acknowledged via the frontend or API"
-msgstr ""
+msgstr "프런트엔드 또는 API를 통해 작업이 승인된 경우"
 
 #: documents/models.py:602
 msgid "Task Filename"
@@ -469,7 +469,7 @@ msgstr "작업 파일명"
 
 #: documents/models.py:603
 msgid "Name of the file which the Task was run for"
-msgstr ""
+msgstr "작업이 실행된 파일 이름"
 
 #: documents/models.py:609
 msgid "Task Name"
@@ -477,7 +477,7 @@ msgstr "작업명"
 
 #: documents/models.py:610
 msgid "Name of the Task which was run"
-msgstr ""
+msgstr "실행된 작업의 이름"
 
 #: documents/models.py:617
 msgid "Task State"
@@ -485,7 +485,7 @@ msgstr "작업 상태"
 
 #: documents/models.py:618
 msgid "Current state of the task being run"
-msgstr ""
+msgstr "실행 중인 작업의 현재 상태"
 
 #: documents/models.py:623
 msgid "Created DateTime"
@@ -493,7 +493,7 @@ msgstr "생성일시"
 
 #: documents/models.py:624
 msgid "Datetime field when the task result was created in UTC"
-msgstr ""
+msgstr "작업 결과가 UTC로 생성된 경우 날짜/시간 필드"
 
 #: documents/models.py:629
 msgid "Started DateTime"
@@ -501,7 +501,7 @@ msgstr "시작일시"
 
 #: documents/models.py:630
 msgid "Datetime field when the task was started in UTC"
-msgstr ""
+msgstr "UTC로 작업이 시작된 날짜/시간 필드"
 
 #: documents/models.py:635
 msgid "Completed DateTime"
@@ -509,7 +509,7 @@ msgstr "완료일시"
 
 #: documents/models.py:636
 msgid "Datetime field when the task was completed in UTC"
-msgstr ""
+msgstr "UTC로 작업이 완료된 날짜/시간 필드"
 
 #: documents/models.py:641
 msgid "Result Data"
@@ -517,7 +517,7 @@ msgstr "완료 결과"
 
 #: documents/models.py:643
 msgid "The data returned by the task"
-msgstr ""
+msgstr "작업에서 반환되는 데이터"
 
 #: documents/models.py:655
 msgid "Note for the document"
@@ -537,7 +537,7 @@ msgstr "노트"
 
 #: documents/models.py:693
 msgid "Archive"
-msgstr ""
+msgstr "아카이브"
 
 #: documents/models.py:694
 msgid "Original"
@@ -545,31 +545,31 @@ msgstr "원본"
 
 #: documents/models.py:705
 msgid "expiration"
-msgstr ""
+msgstr "만료"
 
 #: documents/models.py:712
 msgid "slug"
-msgstr ""
+msgstr "슬러그"
 
 #: documents/models.py:744
 msgid "share link"
-msgstr ""
+msgstr "링크 공유"
 
 #: documents/models.py:745
 msgid "share links"
-msgstr ""
+msgstr "링크 공유"
 
 #: documents/models.py:757
 msgid "String"
-msgstr ""
+msgstr "문자열"
 
 #: documents/models.py:758
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: documents/models.py:759
 msgid "Date"
-msgstr ""
+msgstr "날짜"
 
 #: documents/models.py:760
 msgid "Boolean"
@@ -577,7 +577,7 @@ msgstr ""
 
 #: documents/models.py:761
 msgid "Integer"
-msgstr ""
+msgstr "정수"
 
 #: documents/models.py:762
 msgid "Float"
@@ -597,255 +597,255 @@ msgstr "데이터 타입"
 
 #: documents/models.py:784
 msgid "custom field"
-msgstr ""
+msgstr "사용자 정의 필드"
 
 #: documents/models.py:785
 msgid "custom fields"
-msgstr ""
+msgstr "사용자 정의 필드"
 
 #: documents/models.py:847
 msgid "custom field instance"
-msgstr ""
+msgstr "사용자 정의 필드 인스턴스"
 
 #: documents/models.py:848
 msgid "custom field instances"
-msgstr ""
-
-#: documents/models.py:905
-msgid "Consumption Started"
-msgstr ""
-
-#: documents/models.py:906
-msgid "Document Added"
-msgstr ""
-
-#: documents/models.py:907
-msgid "Document Updated"
-msgstr ""
+msgstr "사용자 정의 필드 인스턴스"
 
 #: documents/models.py:910
-msgid "Consume Folder"
-msgstr ""
+msgid "Consumption Started"
+msgstr "소비 시작됨"
 
 #: documents/models.py:911
-msgid "Api Upload"
-msgstr ""
+msgid "Document Added"
+msgstr "문서 추가됨"
 
 #: documents/models.py:912
-msgid "Mail Fetch"
-msgstr ""
+msgid "Document Updated"
+msgstr "문서 업데이트됨"
 
 #: documents/models.py:915
-msgid "Workflow Trigger Type"
-msgstr ""
+msgid "Consume Folder"
+msgstr "소비된 폴더"
 
-#: documents/models.py:927
-msgid "filter path"
-msgstr ""
+#: documents/models.py:916
+msgid "Api Upload"
+msgstr "Api 업로드"
+
+#: documents/models.py:917
+msgid "Mail Fetch"
+msgstr "메일 가져오기"
+
+#: documents/models.py:920
+msgid "Workflow Trigger Type"
+msgstr "워크플로 트리거 유형"
 
 #: documents/models.py:932
+msgid "filter path"
+msgstr "필터 경로"
+
+#: documents/models.py:937
 msgid "Only consume documents with a path that matches this if specified. Wildcards specified as * are allowed. Case insensitive."
-msgstr ""
+msgstr "지정된 경우 경로와 일치하는 문서만 사용합니다. * 와일드카드가 허용됩니다. 대소문자를 구분하지 않습니다."
 
-#: documents/models.py:939
+#: documents/models.py:944
 msgid "filter filename"
-msgstr ""
+msgstr "파일 이름 필터"
 
-#: documents/models.py:944 paperless_mail/models.py:148
+#: documents/models.py:949 paperless_mail/models.py:148
 msgid "Only consume documents which entirely match this filename if specified. Wildcards such as *.pdf or *invoice* are allowed. Case insensitive."
-msgstr ""
+msgstr "지정된 경우 파일 이름과 완전히 일치하는 문서만 사용합니다. *.pdf와 같은 와일드카드 또는 invoice와 같은 것이 허용됩니다. 대소문자를 구분하지 않습니다."
 
-#: documents/models.py:955
+#: documents/models.py:960
 msgid "filter documents from this mail rule"
 msgstr ""
 
-#: documents/models.py:971
+#: documents/models.py:976
 msgid "has these tag(s)"
 msgstr ""
 
-#: documents/models.py:979
+#: documents/models.py:984
 msgid "has this document type"
 msgstr ""
 
-#: documents/models.py:987
+#: documents/models.py:992
 msgid "has this correspondent"
 msgstr ""
 
-#: documents/models.py:991
+#: documents/models.py:996
 msgid "workflow trigger"
 msgstr ""
 
-#: documents/models.py:992
+#: documents/models.py:997
 msgid "workflow triggers"
 msgstr ""
 
-#: documents/models.py:1002
+#: documents/models.py:1007
 msgid "Assignment"
 msgstr ""
 
-#: documents/models.py:1006
+#: documents/models.py:1011
 msgid "Removal"
 msgstr ""
 
-#: documents/models.py:1010
+#: documents/models.py:1015
 msgid "Workflow Action Type"
 msgstr ""
 
-#: documents/models.py:1016
+#: documents/models.py:1021
 msgid "assign title"
 msgstr ""
 
-#: documents/models.py:1021
+#: documents/models.py:1026
 msgid "Assign a document title, can include some placeholders, see documentation."
 msgstr ""
 
-#: documents/models.py:1030 paperless_mail/models.py:216
+#: documents/models.py:1035 paperless_mail/models.py:216
 msgid "assign this tag"
 msgstr ""
 
-#: documents/models.py:1039 paperless_mail/models.py:224
+#: documents/models.py:1044 paperless_mail/models.py:224
 msgid "assign this document type"
 msgstr ""
 
-#: documents/models.py:1048 paperless_mail/models.py:238
+#: documents/models.py:1053 paperless_mail/models.py:238
 msgid "assign this correspondent"
 msgstr ""
 
-#: documents/models.py:1057
+#: documents/models.py:1062
 msgid "assign this storage path"
 msgstr ""
 
-#: documents/models.py:1066
+#: documents/models.py:1071
 msgid "assign this owner"
 msgstr ""
 
-#: documents/models.py:1073
+#: documents/models.py:1078
 msgid "grant view permissions to these users"
 msgstr ""
 
-#: documents/models.py:1080
+#: documents/models.py:1085
 msgid "grant view permissions to these groups"
 msgstr ""
 
-#: documents/models.py:1087
+#: documents/models.py:1092
 msgid "grant change permissions to these users"
 msgstr ""
 
-#: documents/models.py:1094
+#: documents/models.py:1099
 msgid "grant change permissions to these groups"
 msgstr ""
 
-#: documents/models.py:1101
+#: documents/models.py:1106
 msgid "assign these custom fields"
 msgstr ""
 
-#: documents/models.py:1108
+#: documents/models.py:1113
 msgid "remove these tag(s)"
 msgstr ""
 
-#: documents/models.py:1113
+#: documents/models.py:1118
 msgid "remove all tags"
 msgstr ""
 
-#: documents/models.py:1120
+#: documents/models.py:1125
 msgid "remove these document type(s)"
 msgstr ""
 
-#: documents/models.py:1125
+#: documents/models.py:1130
 msgid "remove all document types"
 msgstr ""
 
-#: documents/models.py:1132
+#: documents/models.py:1137
 msgid "remove these correspondent(s)"
 msgstr ""
 
-#: documents/models.py:1137
+#: documents/models.py:1142
 msgid "remove all correspondents"
 msgstr ""
 
-#: documents/models.py:1144
+#: documents/models.py:1149
 msgid "remove these storage path(s)"
 msgstr ""
 
-#: documents/models.py:1149
+#: documents/models.py:1154
 msgid "remove all storage paths"
 msgstr ""
 
-#: documents/models.py:1156
+#: documents/models.py:1161
 msgid "remove these owner(s)"
 msgstr ""
 
-#: documents/models.py:1161
+#: documents/models.py:1166
 msgid "remove all owners"
 msgstr ""
 
-#: documents/models.py:1168
+#: documents/models.py:1173
 msgid "remove view permissions for these users"
 msgstr ""
 
-#: documents/models.py:1175
+#: documents/models.py:1180
 msgid "remove view permissions for these groups"
 msgstr ""
 
-#: documents/models.py:1182
+#: documents/models.py:1187
 msgid "remove change permissions for these users"
 msgstr ""
 
-#: documents/models.py:1189
+#: documents/models.py:1194
 msgid "remove change permissions for these groups"
 msgstr ""
 
-#: documents/models.py:1194
+#: documents/models.py:1199
 msgid "remove all permissions"
 msgstr ""
 
-#: documents/models.py:1201
+#: documents/models.py:1206
 msgid "remove these custom fields"
 msgstr ""
 
-#: documents/models.py:1206
+#: documents/models.py:1211
 msgid "remove all custom fields"
 msgstr ""
 
-#: documents/models.py:1210
+#: documents/models.py:1215
 msgid "workflow action"
 msgstr ""
 
-#: documents/models.py:1211
+#: documents/models.py:1216
 msgid "workflow actions"
 msgstr ""
 
-#: documents/models.py:1220 paperless_mail/models.py:95
+#: documents/models.py:1225 paperless_mail/models.py:95
 msgid "order"
 msgstr ""
 
-#: documents/models.py:1226
+#: documents/models.py:1231
 msgid "triggers"
 msgstr ""
 
-#: documents/models.py:1233
+#: documents/models.py:1238
 msgid "actions"
 msgstr ""
 
-#: documents/models.py:1236
+#: documents/models.py:1241
 msgid "enabled"
 msgstr ""
 
-#: documents/serialisers.py:114
+#: documents/serialisers.py:115
 #, python-format
 msgid "Invalid regular expression: %(error)s"
 msgstr ""
 
-#: documents/serialisers.py:417
+#: documents/serialisers.py:418
 msgid "Invalid color."
 msgstr ""
 
-#: documents/serialisers.py:1143
+#: documents/serialisers.py:1148
 #, python-format
 msgid "File type %(type)s not supported"
 msgstr ""
 
-#: documents/serialisers.py:1252
+#: documents/serialisers.py:1257
 msgid "Invalid variable detected."
 msgstr ""
 
@@ -1204,131 +1204,131 @@ msgstr ""
 msgid "paperless application settings"
 msgstr ""
 
-#: paperless/settings.py:666
+#: paperless/settings.py:662
 msgid "English (US)"
 msgstr "영어 (미국)"
 
-#: paperless/settings.py:667
+#: paperless/settings.py:663
 msgid "Arabic"
 msgstr "아랍어"
 
-#: paperless/settings.py:668
+#: paperless/settings.py:664
 msgid "Afrikaans"
 msgstr "아프리칸스어"
 
-#: paperless/settings.py:669
+#: paperless/settings.py:665
 msgid "Belarusian"
 msgstr "벨라루스어"
 
-#: paperless/settings.py:670
+#: paperless/settings.py:666
 msgid "Bulgarian"
 msgstr "불가리어"
 
-#: paperless/settings.py:671
+#: paperless/settings.py:667
 msgid "Catalan"
 msgstr "카탈로니아어"
 
-#: paperless/settings.py:672
+#: paperless/settings.py:668
 msgid "Czech"
 msgstr "체코어"
 
-#: paperless/settings.py:673
+#: paperless/settings.py:669
 msgid "Danish"
 msgstr "덴마크어"
 
-#: paperless/settings.py:674
+#: paperless/settings.py:670
 msgid "German"
 msgstr "독일어"
 
-#: paperless/settings.py:675
+#: paperless/settings.py:671
 msgid "Greek"
 msgstr "그리스어"
 
-#: paperless/settings.py:676
+#: paperless/settings.py:672
 msgid "English (GB)"
 msgstr "영어 (영국)"
 
-#: paperless/settings.py:677
+#: paperless/settings.py:673
 msgid "Spanish"
 msgstr "스페인어"
 
-#: paperless/settings.py:678
+#: paperless/settings.py:674
 msgid "Finnish"
 msgstr "핀란드어"
 
-#: paperless/settings.py:679
+#: paperless/settings.py:675
 msgid "French"
 msgstr "프랑스어"
 
-#: paperless/settings.py:680
+#: paperless/settings.py:676
 msgid "Hungarian"
 msgstr "헝가리어"
 
-#: paperless/settings.py:681
+#: paperless/settings.py:677
 msgid "Italian"
 msgstr "이탈리아어"
 
-#: paperless/settings.py:682
+#: paperless/settings.py:678
 msgid "Japanese"
 msgstr ""
 
-#: paperless/settings.py:683
+#: paperless/settings.py:679
 msgid "Luxembourgish"
 msgstr "룩셈부르크어"
 
-#: paperless/settings.py:684
+#: paperless/settings.py:680
 msgid "Norwegian"
 msgstr "노르웨이어"
 
-#: paperless/settings.py:685
+#: paperless/settings.py:681
 msgid "Dutch"
 msgstr "네덜란드어"
 
-#: paperless/settings.py:686
+#: paperless/settings.py:682
 msgid "Polish"
 msgstr "폴란드어"
 
-#: paperless/settings.py:687
+#: paperless/settings.py:683
 msgid "Portuguese (Brazil)"
 msgstr "포르투갈어 (브라질)"
 
-#: paperless/settings.py:688
+#: paperless/settings.py:684
 msgid "Portuguese"
 msgstr "포르투갈어"
 
-#: paperless/settings.py:689
+#: paperless/settings.py:685
 msgid "Romanian"
 msgstr "루마니아어"
 
-#: paperless/settings.py:690
+#: paperless/settings.py:686
 msgid "Russian"
 msgstr "러시아어"
 
-#: paperless/settings.py:691
+#: paperless/settings.py:687
 msgid "Slovak"
 msgstr "슬로바키아어"
 
-#: paperless/settings.py:692
+#: paperless/settings.py:688
 msgid "Slovenian"
 msgstr "슬로베니아어"
 
-#: paperless/settings.py:693
+#: paperless/settings.py:689
 msgid "Serbian"
 msgstr "세르비아어"
 
-#: paperless/settings.py:694
+#: paperless/settings.py:690
 msgid "Swedish"
 msgstr "스웨덴어"
 
-#: paperless/settings.py:695
+#: paperless/settings.py:691
 msgid "Turkish"
 msgstr "튀르키예어"
 
-#: paperless/settings.py:696
+#: paperless/settings.py:692
 msgid "Ukrainian"
 msgstr "우크라이나어"
 
-#: paperless/settings.py:697
+#: paperless/settings.py:693
 msgid "Chinese Simplified"
 msgstr "중국어 간체"
 
