@@ -31,7 +31,7 @@ import { ToastsComponent } from './components/common/toasts/toasts.component'
 import { FilterEditorComponent } from './components/document-list/filter-editor/filter-editor.component'
 import { FilterableDropdownComponent } from './components/common/filterable-dropdown/filterable-dropdown.component'
 import { ToggleableDropdownButtonComponent } from './components/common/filterable-dropdown/toggleable-dropdown-button/toggleable-dropdown-button.component'
-import { DateDropdownComponent } from './components/common/date-dropdown/date-dropdown.component'
+import { DatesDropdownComponent } from './components/common/dates-dropdown/dates-dropdown.component'
 import { DocumentCardLargeComponent } from './components/document-list/document-card-large/document-card-large.component'
 import { DocumentCardSmallComponent } from './components/document-list/document-card-small/document-card-small.component'
 import { BulkEditorComponent } from './components/document-list/bulk-editor/bulk-editor.component'
@@ -138,6 +138,7 @@ import {
   boxes,
   calendar,
   calendarEvent,
+  calendarEventFill,
   cardChecklist,
   caretDown,
   caretUp,
@@ -232,6 +233,7 @@ const icons = {
   boxes,
   calendar,
   calendarEvent,
+  calendarEventFill,
   cardChecklist,
   caretDown,
   caretUp,
@@ -403,7 +405,7 @@ function initializeApp(settings: SettingsService) {
     FilterEditorComponent,
     FilterableDropdownComponent,
     ToggleableDropdownButtonComponent,
-    DateDropdownComponent,
+    DatesDropdownComponent,
     DocumentCardLargeComponent,
     DocumentCardSmallComponent,
     BulkEditorComponent,
